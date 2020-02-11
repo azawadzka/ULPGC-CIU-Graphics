@@ -169,8 +169,8 @@ boolean checkGameOver() {
 
 void displayGameOver(char c) {
   end_screen.beginDraw();
-  PImage img_game_over = loadImage("gameover.png");
-  String loser = c == 'a' ? "B.png" : "A.png"; 
+  PImage img_game_over = loadImage("resources/gameover.png");
+  String loser = c == 'a' ? "resources/B.png" : "resources/A.png"; 
   PImage img_loser = loadImage(loser);
   end_screen.image(img_game_over, end_screen.width / 2 - img_game_over.width / 2, 100);
   end_screen.image(img_loser, end_screen.width / 2 - img_loser.width / 2, 250);
