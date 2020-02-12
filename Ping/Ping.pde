@@ -1,10 +1,12 @@
 /*
 version 2 using separate drawing areas PGraphics
 displayed texts: cooltext.com, Neon Text Generator
-sound effects: Douglas Vicente, License: Attribution 3.0, http://soundbible.com/1750-Hitting-Metal.html
+sound effects: https://freesound.org/people/cfork/sounds/8000/, License: Attribution 3.0 Unported (CC BY 3.0)
 
 Author: Anna Zawadzka
 */
+
+import processing.sound.*;
 
 //AREAS
 PGraphics menu_bar;
@@ -42,9 +44,14 @@ color bar_col = theme_bg;
 color line_col = theme_2;
 color net_col = theme_1;
 
+//SOUND
+SoundFile sound;
+
 void setup() {
   noCursor();
   size(600, 500);
+  
+  sound = new SoundFile(this, "resources/hit.mp3");
   
   menu_bar = createGraphics(w,bar_h);
   table = createGraphics(w,h);
@@ -224,6 +231,7 @@ class Ball {
   public boolean hasBeenHit() {
     for (Racket r : collisions) {
       if (ballOnRacketHorizontal(r.y()) && (ballOnRacketVertical(r.x()))) {
+        makeSound();
         return true;
       }
     }
@@ -269,9 +277,15 @@ class Ball {
     }
   }
   
-  private void reverseVertical() { dy *= -1; }
+  private void reverseVertical() { 
+    dy *= -1; 
+    makeSound();
+  }
   
-  private void reverseHorizontal() { dx *= -1; }
+  private void reverseHorizontal() { 
+    dx *= -1;
+    makeSound();
+  }  
   
   private boolean ballOnRacketVertical(int racket_x) { 
     return x > racket_x - half_size && x < racket_x + Racket.racket_w + half_size; 
@@ -279,6 +293,10 @@ class Ball {
   
   private boolean ballOnRacketHorizontal(int racket_y) { 
     return y > racket_y - half_size && y < racket_y  + Racket.racket_h + half_size; 
+  }
+  
+  private void makeSound() {
+    sound.play();
   }
 }
 
@@ -291,6 +309,7 @@ abstract class Racket {
   public static final int player_offset = 60;
   public static final int line_offset = 30;
   public static final int racket_w = 10, racket_h = 60; //in vertical position
+  
   
   public Racket(PGraphics table) {
     this.t = table;
