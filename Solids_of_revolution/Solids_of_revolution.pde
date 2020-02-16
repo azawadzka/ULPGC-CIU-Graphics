@@ -5,15 +5,15 @@ PShape pointer_dot;
 PShape outline;
 PShape outline_points;
 PShape solid;
+PShape prev_solid;
 ArrayList<Point> list;
 
-String stage = "draw"; // possible stages: draw/display
+String stage = "draw"; // possible stages: draw/display/previous/message_prev/message_no
 
 void setup() {
   size(800, 600, P3D);
   noCursor();
   list = new ArrayList();
-  
   createPointer();
 }
 
@@ -24,8 +24,16 @@ void draw() {
     drawOutline();
     drawPointer();
   } else if (stage == "display") {
-    createSolid();
-    drawSolid();
+    drawSolid(solid);
+  } else if (stage == "previous") {
+    drawSolid(prev_solid);
+  } else if (stage == "message_no") {
+    fill(155,0,0);
+    text("No previous solid to show!", 10, 80);
+  } else if (stage == "message_prev") {
+    fill(155,0,0);
+    text("Only one solid is stored in memory", 10, 80);
+    drawSolid(prev_solid);
   }
 }
 
@@ -33,9 +41,10 @@ void drawBackground() {
   background(50);
   stroke(150);
   if (stage == "draw") line(width/2, 0, width/2, height);
-  stroke(100);
-  text("[Esc] to exit", 10,20);
-  text("[Enter] to start new", 10,40);
+  fill(150);
+  text("[N] to start new", 10,20);
+  text("[P] to display previous solid", 10,40);
+  text("[Esc] to exit", 10,60);
 }
 
 void drawPointer() {
@@ -102,12 +111,12 @@ void createSolid() {
   solid.beginShape(TRIANGLES);
   //solid.noFill();
   solid.fill(250);
-  solid.stroke(255,0,0);
+  solid.stroke(0,255,0);
   solid.strokeWeight(1);
   
   float angle = TWO_PI / NR_SEGMENTS;
   float revolution = 0;
-  // calculate the next set of rotated points and draw triis
+  // calculate the next set of rotated points and draw triangles
   for (float i = 0; i < NR_SEGMENTS; i += 1) {
     revolution += angle;
     prev = curr;
@@ -120,17 +129,16 @@ void createSolid() {
         round(p.x * sin(revolution) + p.z * cos(revolution))));
     }
     
-    // draw triis between two sets of rotated points
+    // draw triangles between two sets of rotated points
     for (int j = 0; j < curr.size() - 1; j++) {    
-      //upper trii
+      //upper triangle
       if (!curr.get(j).equals(prev.get(j))) {
         solid.vertex(prev.get(j).x, prev.get(j).y, prev.get(j).z);
         solid.vertex(curr.get(j).x, curr.get(j).y, curr.get(j).z);
         solid.vertex(prev.get(j+1).x, prev.get(j+1).y, prev.get(j+1).z);
       }
-      //lower trii
+      //lower triangle
       if (!curr.get(j+1).equals(prev.get(j+1))) {
-        solid.stroke(255,0,0);
         solid.vertex(curr.get(j).x, curr.get(j).y, curr.get(j).z);
         solid.vertex(prev.get(j+1).x, prev.get(j+1).y, prev.get(j+1).z);
         solid.vertex(curr.get(j+1).x, curr.get(j+1).y, curr.get(j+1).z);
@@ -142,10 +150,9 @@ void createSolid() {
   solid.endShape();
 }
 
-void drawSolid() {
+void drawSolid(PShape s) {
   translate(mouseX, mouseY);
-  rotateY(PI/2);
-  shape(solid);
+  shape(s);
 }
 
 void mouseClicked() {
@@ -153,9 +160,29 @@ void mouseClicked() {
     if (mouseButton == LEFT) {
       list.add(new Point(mouseX < width/2 ? width/2 : mouseX, mouseY));
     } else if (list.size() >= 3) {
-      
       for (Point p : list) p.translateX();
+      createSolid();
       stage = "display";
     }
   }
+}
+
+void keyPressed() {
+  if (key == 'p') {
+    if (stage == "previous" || stage == "message_prev") 
+      stage = "message_prev";
+    else if (prev_solid == null) 
+      stage = "message_no";
+    else 
+      stage = "previous";
+  } else if (key == 'n') {
+    restart();
+    stage = "draw";
+  }
+}
+
+void restart() {
+  prev_solid = solid;
+  solid = null;
+  list = new ArrayList();;
 }
