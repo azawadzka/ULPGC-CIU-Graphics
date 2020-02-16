@@ -8,10 +8,8 @@ Create a 3D solid of revolution out of a flat profile. Use the mouse to draw the
 
 The outline is rotated and triangulation is performed between two consequent sets of rotated points. The matrix of 3D rotation is used.
 
-<img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/v1.gif" width="300">
-<img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/i1.png" width="300">
-<img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/i2.png" width="300">
-<img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/i3.png" width="300">
+<img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/v1.gif" width="300"> <img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/i1.png" width="300">
+<img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/i2.png" width="300"> <img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/i3.png" width="300">
 
 ---
 ### 1. Ping
@@ -21,8 +19,7 @@ Use of PGraphics areas, sound effects, collisions detection (taking widths into 
 
 Partial use of OOP (Ball, Rackets) to facilitate spatial control of elements and collisions detection.    
 
-<img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Ping/imgs/p1i1.png" width="300">
-<img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Ping/imgs/p1small.gif" width="300">
+<img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Ping/imgs/p1i1.png" width="300"> <img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Ping/imgs/p1small.gif" width="300">
 
 ---
 References:
