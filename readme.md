@@ -3,6 +3,19 @@ Universidad de Las Palmas de Gran Canaria, spring 2020<br>
 Author: Anna Zawadzka<br>
 Processing
 ---
+### 3. Solar system
+A simplified model of the planets' movement around the Sun. The planets move along a circular orbit with fixed speed. The orbits are inclined. Aditionally the model rotates slowly. Some planets are accompanied by one or more moons.  
+
+Each planet is an instance of a Planet class which helps to encapsulate the parameters giving and visualization process. If a planet has moons, they are a list of Planet objects in a given Planet and they behave exactly the same way (moons could have moons but have to be careful to avoid endless recurrention). The moons' parameters are random. All planets are textured.
+
+The rotations and translations in the model operate on the global matrix and matrix pushing and popping is used. All code is <100 lines long.  
+
+<img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solar_system/imgs/v1.gif" width="300"> <img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solar_system/imgs/p1.jpg" width="300">
+
+Photo by Aperture Vintage on Unsplash
+
+Planet textures source: https://www.solarsystemscope.com/textures/, license: Attribution 4.0
+---
 ### 2. Solids of revolution
 Create a 3D solid of revolution out of a flat profile. Use the mouse to draw the profile and right-click to convert it into a 3D object. The object is moveable. Use N key to start a new project. Use P key to display one previous object stored in memory.
 

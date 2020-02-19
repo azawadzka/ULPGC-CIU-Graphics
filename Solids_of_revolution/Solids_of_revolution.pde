@@ -184,5 +184,5 @@ void keyPressed() {
 void restart() {
   prev_solid = solid;
   solid = null;
-  list = new ArrayList();;
+  list = new ArrayList();
 }
