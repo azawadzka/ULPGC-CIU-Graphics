@@ -12,9 +12,10 @@ The rotations and translations in the model operate on the global matrix and mat
 
 <img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solar_system/imgs/v1.gif" width="300"> <img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solar_system/imgs/p1.jpg" width="300">
 
-Photo by Aperture Vintage on Unsplash
+Background photo by Aperture Vintage on Unsplash
 
 Planet textures source: https://www.solarsystemscope.com/textures/, license: Attribution 4.0
+
 ---
 ### 2. Solids of revolution
 Create a 3D solid of revolution out of a flat profile. Use the mouse to draw the profile and right-click to convert it into a 3D object. The object is moveable. Use N key to start a new project. Use P key to display one previous object stored in memory.

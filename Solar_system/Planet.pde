@@ -39,9 +39,7 @@ class Planet {
     
     //display moons
     for (Planet m : moons) {
-      pushMatrix();
       m.display();
-      popMatrix();
     } 
     popMatrix();
   }
