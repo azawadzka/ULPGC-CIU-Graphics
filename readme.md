@@ -8,10 +8,10 @@ Processing
 The project introduces a spaceship to the previous model of the solar system. The spaceship has the capacity of moving in two dimensions and the possibility of viewing it comes as a general perspective and the 1st person perspective.
   
 Steering: 
-Up/down arrows - go closer/further from the Sun
-Left/right arrows - change angle. Allowed to go upside down
-Mouse - look around
-Z - change viewing mode (general/1st person)
+- Up/down arrows - go closer/further from the Sun
+- Left/right arrows - change angle. Allowed to go upside down
+- Mouse - look around
+- Z - change viewing mode (general/1st person)
  
 Changes in code respect to the anterior version of Solar system:
 - the solar system has been converted into a class. It consists of a set of planets, their movements and the movement of the system. The dislocations of the system have been kept outside as they are not an internal feature of it and should also apply to other elements in the scene.
@@ -56,4 +56,5 @@ Partial use of OOP (Ball, Rackets) to facilitate spatial control of elements and
 ---
 References:
 
-https://processing.org/reference/
+- Course manual
+- https://processing.org/reference/
