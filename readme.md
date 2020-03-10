@@ -3,6 +3,24 @@ Universidad de Las Palmas de Gran Canaria, spring 2020<br>
 Author: Anna Zawadzka<br>
 Processing
 ---
+
+### 4. Space navigation
+The project introduces a spaceship to the previous model of the solar system. The spaceship has the capacity of moving in two dimensions and the possibility of viewing it comes as a general perspective and the 1st person perspective.
+  
+Steering: 
+Up/down arrows - go closer/further from the Sun
+Left/right arrows - change angle. Allowed to go upside down
+Mouse - look around
+Z - change viewing mode (general/1st person)
+ 
+Changes in code respect to the anterior version of Solar system:
+- the solar system has been converted into a class. It consists of a set of planets, their movements and the movement of the system. The dislocations of the system have been kept outside as they are not an internal feature of it and should also apply to other elements in the scene.
+- the movement capacity of elements has been separated out of display() method into the new move() method
+
+A new class Spaceship has been introduced. 
+Temporarily the spaceship has the form of a red sphere.  
+
+<img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Space_navigation/imgs/v1.gif" width="300"> <img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Space_navigation/imgs/p1.png" width="300">
 ### 3. Solar system
 A simplified model of the planets' movement around the Sun. The planets move along a circular orbit with fixed speed. The orbits are inclined. Aditionally the model rotates slowly. Some planets are accompanied by one or more moons.  
 
