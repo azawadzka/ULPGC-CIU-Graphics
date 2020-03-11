@@ -10,6 +10,7 @@ class Spaceship {
   float look_vertical;
   float look_horizontal;
   float look_change;
+  final static float min_reach = 150, max_reach = 400;
   
   public Spaceship() {
     rotation = 0;
@@ -41,9 +42,9 @@ class Spaceship {
   // mode [horizontal/vertical], value of the mouse position
   public void change_look(String mode, float value) {
     if (mode == "horizontal")
-      look_horizontal = map(value, 0, width, -PI/2, PI/2);  
+      look_horizontal = map(value, 0, width, -PI/4, PI/4);  
     else
-      look_vertical = map(value, 0, height, -PI/2, PI/2);  
+      look_vertical = map(value, 0, height, -PI/4, PI/4);  
   }
   
   // mode [horizontal/vertical], positive true if value added, ie. movement to the right/up   
@@ -51,7 +52,7 @@ class Spaceship {
     if (mode == "horizontal") {
       float new_r = r;
       new_r += positive ? r_change : -r_change;
-      if (new_r < 300 && new_r > 110) r = new_r;
+      if (new_r < max_reach && new_r > min_reach) r = new_r;
     }
     else {
       slope += positive ? slope_change : -slope_change;

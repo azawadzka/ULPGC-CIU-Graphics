@@ -17,6 +17,7 @@ void draw() {
   //BACKGROUND
   background(bg);
   
+  //DISPLAY ACCORDING TO CHOSEN VIEW
   if (view == "general") {
     //MODEL TRANSFORMATIONS
     translate(width/2, height/2);
@@ -44,9 +45,9 @@ void draw() {
     
   //SENSORS
   readMouse();
-  //keyPressed independent from loop
+  //keyPressed independent from main loop
   
-  //MECHANIC ELEMENTS
+  //MECHANICAL ELEMENTS
   ss.move();
   ss.display();
   
@@ -59,28 +60,11 @@ void keyPressed() {
     view = view == "1st_person" ? "general" : "1st_person";
   }
   else if (key == CODED) {
-    if (keyCode == UP) {
-      ship.change_position("horizontal", true);
-    } 
-    else
-    {
-      if (keyCode == DOWN) {
-        ship.change_position("horizontal", false);
-        
-      }
-      else
-      {
-        if (keyCode == LEFT) {
-          ship.change_position("vertical", false);  
-        } 
-        else
-        {
-          if (keyCode == RIGHT) {
-            ship.change_position("vertical", true);
-          } 
-        }
-      }
-    }
+    if (keyCode == UP) ship.change_position("horizontal", true);
+    else if (keyCode == DOWN) ship.change_position("horizontal", false);
+      else if (keyCode == LEFT) ship.change_position("vertical", false);  
+        else if (keyCode == RIGHT) ship.change_position("vertical", true);
+
   } 
 }
 

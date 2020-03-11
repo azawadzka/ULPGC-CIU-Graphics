@@ -6,7 +6,7 @@ Processing
 
 ### 4. Space navigation
 The project introduces a spaceship to the previous model of the solar system. The spaceship has the capacity of moving in two dimensions and the possibility of viewing it comes as a general perspective and the 1st person perspective.
-  
+
 Steering: 
 - Up/down arrows - go closer/further from the Sun
 - Left/right arrows - change angle. Allowed to go upside down
@@ -57,4 +57,5 @@ Partial use of OOP (Ball, Rackets) to facilitate spatial control of elements and
 References:
 
 - Course manual
-- https://processing.org/reference/
+- Processing reference: https://processing.org/reference/
+- Spherical to cartesian coordinates conversion: http://tutorial.math.lamar.edu/Classes/CalcIII/SphericalCoords.aspx
