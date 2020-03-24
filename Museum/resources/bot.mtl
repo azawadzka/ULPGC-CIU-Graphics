@@ -1,0 +1,80 @@
+# Blender MTL File: 'None'
+# Material Count: 6
+
+newmtl Spder_bot
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_N.jpg
+map_Kd textures\\Gun_bot_ao_2.png
+map_Ks C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_C.jpg
+
+newmtl Spder_bot_Black
+Ns 749.999999
+Ka 1.000000 1.000000 1.000000
+Kd 0.213915 0.213915 0.213915
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_N.jpg
+map_Kd textures\\Gun_bot_ao_2.png
+map_Ks C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_C.jpg
+
+newmtl Spder_bot_Black_GB_N.jpg
+Ns 749.999999
+Ka 1.000000 1.000000 1.000000
+Kd 0.213915 0.213915 0.213915
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_N.jpg
+map_Kd C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_N.jpg
+map_Ks C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_C.jpg
+
+newmtl Spder_bot_Black_NONE
+Ns 749.999999
+Ka 1.000000 1.000000 1.000000
+Kd 0.213915 0.213915 0.213915
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_N.jpg
+map_Kd C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_C.jpg
+map_Ks C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_C.jpg
+
+newmtl Spder_bot_GB_N.jpg
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_N.jpg
+map_Kd C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_N.jpg
+map_Ks C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_C.jpg
+
+newmtl Spder_bot_NONE
+Ns 96.078443
+Ka 1.000000 1.000000 1.000000
+Kd 0.640000 0.640000 0.640000
+Ks 0.000000 0.000000 0.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 1
+map_Bump C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_N.jpg
+map_Kd C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_C.jpg
+map_Ks C:\\Users\\Anna\\Desktop\\Gun Bot\\textures\\GB_C.jpg
