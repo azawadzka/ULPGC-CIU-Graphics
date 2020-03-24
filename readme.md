@@ -19,7 +19,7 @@ The steering algorithm takes the mapping of mouse X position to one full circle 
 <img src="/imgs/view.png">
   
 The lights in the scene are: <b>directional light</b> from the top making it possible to see the scene, <b>specular light</b> and <b>spot light</b> used as the torch. The center of the spot light is below the camera and the direction is forward wherever the user is looking. The user can point higher or lower using mouse in Y axis. The spotlight goes along a chosen axis, so when the user moves around the axes change dynamically. To solve this I used the mapping of user rotation to values of axes in the range [-1,1]. User rotation is also bound to the width so that one full circle equals the value of screen width. 
-<img src="Museum/imgs/mappings.png">
+<img src="/Museum/imgs/mappings.png">
 
 <img src="/Museum/imgs/v1.gif" width="300"> <img src="/Museum/imgs/p1.png" width="300">
 
