@@ -15,7 +15,7 @@ The data about note frequencies comes from [pages.mtu.edu/~suits/notefreqs.html]
 
 The gif shows pulling each string of a tuned guitar (EBGDAE).
 
-<img src="/Tuner/imgs/v1.gif" width="300"> <img src="/Tuner/imgs/p1.png" width="300">
+<img src="/Tuner/imgs/v.gif" width="300"> <img src="/Tuner/imgs/p1.png" width="300">
 
 
 ### 5. Museum
