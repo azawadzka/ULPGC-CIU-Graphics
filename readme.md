@@ -3,9 +3,23 @@ Universidad de Las Palmas de Gran Canaria, spring 2020<br>
 Author: Anna Zawadzka<br>
 Processing
 ---
+### 7. Tuner
+
+The tuner selects the dominant wave frequency from input and compares it to note frequencies given in an external file. 
+Then it displays the closest note and the distance [Hz] from the pure pitch.
+
+Minim library for sound processing was used. 
+
+The background range image and the hand of the tuner were made using GIMP. 
+The data about note frequencies comes from [pages.mtu.edu/~suits/notefreqs.html](https://pages.mtu.edu/~suits/notefreqs.html) 
+
+The gif shows pulling each string of a tuned guitar (EBGDAE).
+
+<img src="/Tuner/imgs/v1.gif" width="300"> <img src="/Tuner/imgs/p1.png" width="300">
+
 
 ### 5. Museum
-Depiction of a room full of simple objects and one valuable sculpture of Venus de Milo. The user may walk through the room to find the sculpture. The room is dark and the user can see objects pointing a torch at them.
+Scene of a room full of simple objects and one valuable sculpture of Venus de Milo. The user may walk through the room to find the sculpture. The room is dark and the user can see objects pointing a torch at them.
 
 The 3D objects were edited in Blender to reduce their computational complexity. The number of faces of the key object, Venus de Milo, was reduced from 274,000 to 82,000 or 14,000, in case that is too power consuming (requires minor change in code: change filename "venus82k" to "venus14k"). Other objects have up to 1000 faces. The figures were saved upside down due to inconsistency in axes turn (in graphics editors the Y axis increments upwards, while in Processing downwards). 
 
