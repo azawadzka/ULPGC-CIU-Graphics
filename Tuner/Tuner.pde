@@ -13,6 +13,8 @@ PImage background;
 PImage scale;
 PImage pointer;
 
+int pixelsPerTooth = 9;
+
 void setup() {
   size(500,200);
   // load data about note names and corresponding frequencies
@@ -30,7 +32,7 @@ void setup() {
   fft = new FFT(in.left.size(), 44100);
   
   // load images
-  background = loadImage("resources/background.jpg");
+  background = loadImage("resources/background.png");
   background.resize(500,200);
   scale = loadImage("resources/scale.png");
   scale.resize(int(scale.width * 0.3), int(scale.height * 0.3));
@@ -67,11 +69,11 @@ void draw() {
    
    background(background);
    image(scale,7,60);
-   if (frequency > 80) {
+   if (frequency > 50) {
      fill(0);
      textSize(30); 
      text(notes[maxIdx], width/2 - 10, 40);
-     image(pointer,width/2 - pointer.width/2 + difference,100);
+     image(pointer,width/2 - pointer.width/2 + difference * pixelsPerTooth,100);
    } else {
      image(pointer,width/2 - pointer.width/2, 100);
    }

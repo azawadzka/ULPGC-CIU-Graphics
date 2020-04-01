@@ -17,7 +17,7 @@ The gif shows pulling each string of a tuned guitar (EBGDAE).
 
 <img src="/Tuner/imgs/v.gif" width="300"> <img src="/Tuner/imgs/p1.png" width="300">
 
-Background: Photo by bharath g s on Unsplash
+Background: [Photo by bharath g s on Unsplash](https://unsplash.com/photos/aLGiPJ4XRO4)
 
 ### 5. Museum
 Scene of a room full of simple objects and one valuable sculpture of Venus de Milo. The user may walk through the room to find the sculpture. The room is dark and the user can see objects pointing a torch at them.
