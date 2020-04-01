@@ -19,6 +19,31 @@ The gif shows pulling each string of a tuned guitar (EBGDAE).
 
 Background: [Photo by bharath g s on Unsplash](https://unsplash.com/photos/aLGiPJ4XRO4)
 
+### 6. Dust
+
+A manipulation of live capture from the webcam. 
+A stream of colorful dust is being constantly pushed from the bottom of the screen.
+Movements within the area of the capture can influence the flow of the dust. 
+  
+
+##### Algorithm
+The algorithm takes two consecutive frames in greyscale and subtracts one from the other to get a matrix of differences [1].
+Then it does thresholding [2] on that matrix. 
+The matrix gets split in squares sized 10x10 pixels and the amount of white fields inside each area is summed [4].
+If a square contains more than a certain percent of white fields, then it is qualified to push the fluid from its area, since a noticeable movement has been detected. 
+The point in the middle of that square is further passed to the observing part of the particle system.
+The particle system disperses the fluid in random horizontal direction from the collected points and constantly upwards [3].
+
+
+##### Code
+Parts of the code were adapted from the course material examples: 
+[[1] Camera Difference](https://github.com/otsedom/CIU/blob/master/P6/p6_camdiff/p6_camdiff.pde)    
+and [[2] Camera Threshold](https://github.com/otsedom/CIU/blob/master/P6/p6_camthreshold/p6_camthreshold.pde),
+and the PixelFlow library example [[3] Fluid2D/Multiple Fluids](https://github.com/diwi/PixelFlow/blob/master/examples/Fluid2D/Fluid_MultipleFluids/Fluid_MultipleFluids.java).
+The algorithm for the extraction of distinctive points from the matrix of differences between frames (function getMovementPoints) was written by me [4].
+
+<img src="/Dust/imgs/v.gif" width="300"> <img src="/Dust/imgs/p1.png" width="300">
+
 ### 5. Museum
 Scene of a room full of simple objects and one valuable sculpture of Venus de Milo. The user may walk through the room to find the sculpture. The room is dark and the user can see objects pointing a torch at them.
 
@@ -107,4 +132,6 @@ References:
 - Course manual
 - Processing reference: https://processing.org/reference/
 - Spherical to cartesian coordinates conversion: http://tutorial.math.lamar.edu/Classes/CalcIII/SphericalCoords.aspx
-- 3D Models In Processing, Medium https://medium.com/@behreajj/3d-models-in-processing-7d968a7cede5
+- 3D Models In Processing, Medium: https://medium.com/@behreajj/3d-models-in-processing-7d968a7cede5
+- OpenCV Mat structure: https://docs.opencv.org/2.4/doc/tutorials/core/mat_the_basic_image_container/mat_the_basic_image_container.html
+- OpenCV Core: https://docs.opencv.org/3.4/javadoc/org/opencv/core/Core.html
