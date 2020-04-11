@@ -28,8 +28,8 @@ for(int i = 0; i < 20000; i++) {
     if (amplitude > highestAmp){
        highestAmp = amplitude;
        frequency = i;
-     }
-   } 
+    }
+} 
 ```
 Finding the closest note:
 ```java
@@ -37,7 +37,7 @@ for (int i = 0; i < notes.length; i++) {
      if (abs(frequency - frequencies[i]) < abs(frequency - frequencies[maxIdx])) {
        maxIdx = i;
      }
-   }
+}
 ```
 
 Background: [Photo by bharath g s on Unsplash](https://unsplash.com/photos/aLGiPJ4XRO4)
@@ -132,6 +132,15 @@ public boolean can_move() {
     return board.can_move(p + val[0], r + val[1]);
   }
 ```  
+```java
+// Board.pde
+public boolean can_move(int p, int r) {
+    if (p < 0 || p >= size) return false;
+    if (r < 0 || r >= size) return false;
+    if (board[p][r] != null) return false;
+    return true;
+}
+```
 The lights in the scene are: <b>directional light</b> from the top making it possible to see the scene, <b>specular light</b> and <b>spot light</b> used as the torch. The center of the spot light is below the camera and the direction is forward wherever the user is looking. The user can point higher or lower using mouse in Y axis. The spotlight goes along a chosen axis, so when the user moves around the axes change dynamically. To solve this I used the mapping of user rotation to values of axes in the range [-1,1]. User rotation is also bound to the width so that one full circle equals the value of screen width. 
 <img src="/Museum/imgs/mappings.png">
 
