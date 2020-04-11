@@ -5,6 +5,7 @@ Processing
 ---
 ### 7. Tuner
 The gif shows pulling each string of a tuned guitar (EBGDAE).
+
 <img src="/Tuner/imgs/v.gif" width="300"> <img src="/Tuner/imgs/p1.png" width="300">
 
 The tuner selects the dominant wave frequency from input and compares it to note frequencies given in an external file. 
@@ -14,7 +15,7 @@ Minim library for sound processing was used.
 
 The background range image and the hand of the tuner were made using GIMP. 
 The data about note frequencies comes from [pages.mtu.edu/~suits/notefreqs.html](https://pages.mtu.edu/~suits/notefreqs.html) 
-##### Code highlights:
+#### Code highlights:
 Frequency input grabbing:
 ```java
 in = minim.getLineIn(Minim.MONO, 4096, 44100);
@@ -49,7 +50,7 @@ A stream of colorful dust is constantly pushed from the bottom of the view.
 Movements within the area of the capture can influence the flow of the dust. 
   
 Use of **OpenCV 4.0.0** (downloaded from an [external source]() and replacing the default OpenCV library), **system of particles** PixelFlow, **matrix calculations**.
-##### Algorithm
+#### Algorithm
 [References to the code]
 
 The algorithm takes two consecutive frames in greyscale and subtracts one from the other to get a matrix of differences [1].
@@ -60,7 +61,7 @@ The point in the middle of that square is further passed to the observing part o
 The particle system disperses the fluid in random horizontal direction from the collected points and constantly upwards [3].
 
 
-##### Code
+#### Code
 Parts of the code were adapted from the course material examples: 
 [[1] Camera Difference](https://github.com/otsedom/CIU/blob/master/P6/p6_camdiff/p6_camdiff.pde)    
 and [[2] Camera Threshold](https://github.com/otsedom/CIU/blob/master/P6/p6_camthreshold/p6_camthreshold.pde),
@@ -83,7 +84,9 @@ Steering:
 - the arrow shows the possible movement direction
 
 The steering algorithm takes the mapping of mouse X position to one full circle that corresponds all possible views while looking around. Then the direction is decided basing on which slice of the circle is considered, as in the sketch:
+
 <img src="/Museum/imgs/view.png">
+
 The function get_direction() **converts** the mouse input (x position) that controls the **player rotation into** a pair of (mp,mr) values that represent the **change of position** (p,r) on the chessboard that the user can make given the input (as values {-1, 0, 1}): 
 ```java
 // Player.pde
@@ -131,6 +134,7 @@ public boolean can_move() {
 ```  
 The lights in the scene are: <b>directional light</b> from the top making it possible to see the scene, <b>specular light</b> and <b>spot light</b> used as the torch. The center of the spot light is below the camera and the direction is forward wherever the user is looking. The user can point higher or lower using mouse in Y axis. The spotlight goes along a chosen axis, so when the user moves around the axes change dynamically. To solve this I used the mapping of user rotation to values of axes in the range [-1,1]. User rotation is also bound to the width so that one full circle equals the value of screen width. 
 <img src="/Museum/imgs/mappings.png">
+
 Finding the vertical position of the torch, implementing the curve to find x and z direction and setting up the light:
 ```java
 // Torch.pde
@@ -188,7 +192,7 @@ Changes in code respect to the anterior version of Solar system:
 A new class Spaceship has been introduced. 
 Temporarily the spaceship has the form of a red sphere.  
 
-##### Code highlights:
+#### Code highlights:
 First person camera view. Calculations to convert parameters from spherical coordinates which are more convenient to manipulate to cartesian coordinates which are taken by the camera:
 ```java
 // Space_navigation.pde
@@ -203,7 +207,7 @@ float cz = ship.r * cos(ship.rotation + PI/4 + ship.look_vertical);
   
 camera(x,y,z,cx,cy,cz,0,1,0);  
 ```
-Chane spaceship position (slope, distance from the center of the installation) based on user input processed and passed as arguments:
+Change spaceship position (slope, distance from the center of the installation) based on user input processed and passed as arguments:
 ```java
 // Space_navigation.pde
 void readMouse() {
@@ -234,7 +238,7 @@ A simplified model of the planets' movement around the Sun. The planets move alo
 Each planet is an instance of a Planet class which helps to encapsulate the parameters giving and visualization process. If a planet has moons, they are a list of Planet objects in a given Planet and they behave exactly the same way (moons could have moons but have to be careful to avoid endless recurrention). The moons' parameters are random. All planets are textured.
 
 The rotations and translations in the model operate on the global matrix and matrix pushing and popping is used. All code is <100 lines long.
-##### Code highlights: 
+#### Code highlights: 
 Planet object constructor and instantiation:
 ```java
 public Planet(String name, int radius, int distance, float rotation_speed, float angle, int nr_moons) {
@@ -286,6 +290,7 @@ Create a 3D solid of revolution out of a flat profile. Use the mouse to draw the
 The outline is rotated and triangulation is performed between two consequent sets of rotated points. The matrix of 3D rotation is used.
 
 <img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/v1.gif" width="300"> <img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/i1.png" width="300">
+
 <img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/i2.png" width="300"> <img src="https://raw.githubusercontent.com/azawadzka/ULPGC-CIU-Graphics/master/Solids_of_revolution/imgs/i3.png" width="300">
 
 ---
