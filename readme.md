@@ -43,7 +43,7 @@ for (int i = 0; i < notes.length; i++) {
 Background: [Photo by bharath g s on Unsplash](https://unsplash.com/photos/aLGiPJ4XRO4)
 
 ### 6. Dust
-<img src="/Dust/imgs/v.gif" width="300"> <img src="/Dust/imgs/p1.png" width="300">
+<img src="/Dust/imgs/v.gif" width="400"> 
 
 A manipulation of live capture from the webcam. 
 A stream of colorful dust is constantly pushed from the bottom of the view.
